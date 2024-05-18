@@ -1,4 +1,4 @@
-import { useTheme } from "./shared/hooks/useTheme";
+import { THEMES, useTheme } from './shared/hooks/useTheme';
 
 function App() {
   const { theme, toggleTheme } = useTheme();
@@ -7,7 +7,7 @@ function App() {
     <div className={theme}>
       <h1>useTheme</h1>
       <button onClick={toggleTheme}>
-        Switch to {theme === "dark" ? "Light" : "Dark"} Mode
+        Switch to {theme === THEMES.DARK ? 'Light' : 'Dark'} Mode
       </button>
     </div>
   );

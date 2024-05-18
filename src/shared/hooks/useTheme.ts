@@ -1,10 +1,18 @@
-import { useLocalStorage } from "./useLocalStorage";
+import { useLocalStorage } from './useLocalStorage';
+
+export const THEMES = {
+  LIGHT: 'light',
+  DARK: 'dark',
+};
 
 export const useTheme = () => {
-  const { value: theme, setData: setTheme } = useLocalStorage("theme", "dark");
+  const { value: theme, setData: setTheme } = useLocalStorage(
+    'theme',
+    THEMES.DARK
+  );
 
   const toggleTheme = () => {
-    const nextTheme = theme === "light" ? "dark" : "light";
+    const nextTheme = theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
     setTheme(nextTheme);
   };
 
